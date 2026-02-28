@@ -1,0 +1,11 @@
+langchain
+langchain_community
+langchain-chroma
+langchain-ollama
+chromadb
+uvicorn
+fastapi
+langchain
+pydantic
+python-dotenv
+pyqt6
