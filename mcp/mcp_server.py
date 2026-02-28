@@ -15,7 +15,7 @@ async def get_current_time():
 async def Fahrenheit_to_celsius(Fahrenheit:float):
     """Converts temperature given in Fahrenheit degrees to Celsius degrees"""
     celsius = (Fahrenheit - 32) * (5/9)
-    return f"{Fahrenheit}°F is {celsius:.2f}°C
+    return f"{Fahrenheit}°F is {celsius:.2f}°C"
 
 @mcp.tool()
 async def Celsius_to_fahrenheit(Celsius:float):
@@ -46,6 +46,7 @@ async def calculate_years_since(year: int):
 if __name__ == "__main__":
     mcp.run(transport="stdio")
     
+
 
 
 
