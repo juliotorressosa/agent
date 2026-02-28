@@ -19,9 +19,9 @@ async def Fahrenheit_to_celsius(Fahrenheit:float):
 
 @mcp.tool()
 async def Celsius_to_fahrenheit(Celsius:float):
-"""Converts temperature given in Celsius degrees to Fahrenheit degrees"""
-Fahrenheit = ((Celsius*9)/5) + 32
-return f"{Celsius}°C is {Fahrenheit:.2f}°F"
+    """Converts temperature given in Celsius degrees to Fahrenheit degrees"""
+    Fahrenheit = ((Celsius*9)/5) + 32
+    return f"{Celsius}°C is {Fahrenheit:.2f}°F"
 
 @mcp.tool()
 async def message_sentiment_analysis(message: str):
@@ -46,6 +46,7 @@ async def calculate_years_since(year: int):
 if __name__ == "__main__":
     mcp.run(transport="stdio")
     
+
 
 
 
