@@ -40,12 +40,18 @@ async def message_sentiment_analysis(message: str):
 @mcp.tool()
 async def calculate_years_since(year: int):
     """Calculates the number of years since the given year."""
-    diff = datetime.datetime.now().year - year
+    current_year = datetime.datetime.now().year
+    if year > current_year:
+        return f"{year} is a future year, not a past one."
+    if year < 1:
+        return f"{year} is not a valid year."
+    diff = current_year - year
     return f"It has been {diff} years since {year}."
 
 if __name__ == "__main__":
     mcp.run(transport="stdio")
     
+
 
 
 
