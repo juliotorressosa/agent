@@ -7,11 +7,6 @@ tracer()
 mcp = FastMCP("MCP_Server")
 
 @mcp.tool()
-async def get_current_time():
-    """Returns the current system time."""
-    return f"The current time is {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-
-@mcp.tool()
 async def Fahrenheit_to_celsius(Fahrenheit:float):
     """Converts temperature given in Fahrenheit degrees to Celsius degrees"""
     celsius = (Fahrenheit - 32) * (5/9)
@@ -51,6 +46,7 @@ async def calculate_years_since(year: int):
 if __name__ == "__main__":
     mcp.run(transport="stdio")
     
+
 
 
 
