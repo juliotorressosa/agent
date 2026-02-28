@@ -14,9 +14,13 @@ async def get_current_time():
 @mcp.tool()
 async def message_sentiment_analysis(message: str):
     """Analyzes the sentiment of a message and returns whether it is positive, negative, or neutral."""
-    if "good" in message.lower():
+    positive_words = {"good", "love", "great", "awesome", "excellent", "fantastic", "happy", "wonderful"}
+    negative_words = {"bad", "hate", "terrible", "awful", "horrible", "sad", "worst", "disgusting"}
+    
+    words = set(message.lower().split())
+    if words & positive_words:
         return f"The sentiment of the message '{message}' is positive."
-    elif "bad" in message.lower():
+    elif words & negative_words:
         return f"The sentiment of the message '{message}' is negative."
     else:
         return f"The sentiment of the message '{message}' is neutral."
@@ -30,5 +34,6 @@ async def calculate_years_since(year: int):
 if __name__ == "__main__":
     mcp.run(transport="stdio")
     
+
 
 
