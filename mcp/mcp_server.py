@@ -12,6 +12,18 @@ async def get_current_time():
     return f"The current time is {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
 
 @mcp.tool()
+async def Fahrenheit_to_celsius(Fahrenheit:float):
+    """Converts temperature given in Fahrenheit degrees to Celsius degrees"""
+    Celsius = (Fahrenheit - 32) *(5/9)
+    return f"{Fahrenheit}°F is {celsius:.2f}°C"
+
+@mcp.tool()
+async def Celsius_to_fahrenheit(Celsius:float):
+"""Converts temperature given in Celsius degrees to Fahrenheit degrees"""
+Fahrenheit = ((Celsius*9)/5) + 32
+return f"{Celsius}°C is {Fahrenheit:.2f}°F"
+
+@mcp.tool()
 async def message_sentiment_analysis(message: str):
     """Analyzes the sentiment of a message and returns whether it is positive, negative, or neutral."""
     positive_words = {"good", "love", "great", "awesome", "excellent", "fantastic", "happy", "wonderful"}
@@ -34,6 +46,7 @@ async def calculate_years_since(year: int):
 if __name__ == "__main__":
     mcp.run(transport="stdio")
     
+
 
 
 
